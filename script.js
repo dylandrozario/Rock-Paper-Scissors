@@ -45,6 +45,7 @@ function playRound(humanChoice, computerChoice){
     }
     else if(human === "paper" && computer ==="scissor"){
         console.log("You Lose! Scissor beats Paper");
+        ++computerScore;
     }
     else if(human === "paper" && computer ==="rock"){
         console.log("You win! Paper beats Rock");
@@ -63,5 +64,15 @@ function playRound(humanChoice, computerChoice){
     }
     else{
         console.log("Error");
+    }
+}
+
+function playGame(){
+    let human = "";
+    let computer = "";
+    for(let i = 0; i < 5; i++){
+        human = getHumanChoice();
+        computer = getComputerChoice();
+        playRound(human, computer);
     }
 }
